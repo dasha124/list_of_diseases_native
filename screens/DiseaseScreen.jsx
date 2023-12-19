@@ -23,7 +23,7 @@ const DiseaseScreen = ({ route, navigation }) => {
         })
 
         axiosInstance
-            .get("/disease/" + id)
+            .get("diseases" + id)
             .then(({data}) => {
                 setData(data)
             })
@@ -45,7 +45,7 @@ const DiseaseScreen = ({ route, navigation }) => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Loading />
+                <Load />
             </View>
         )
     }

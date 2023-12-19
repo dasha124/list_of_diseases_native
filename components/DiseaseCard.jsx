@@ -33,6 +33,7 @@ const DiseaseCard = ({navigation, id, name, image}) => {
         </View>
     )
 }
+export default DiseaseCard;
 
 
 // const PostView = styled.View`
@@ -74,4 +75,3 @@ const DiseaseCard = ({navigation, id, name, image}) => {
 //     align-content: center;
 // `
 
-export default DiseaseCard;

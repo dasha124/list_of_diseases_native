@@ -11,20 +11,20 @@ const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
-    //   <Provider store={store}>
-    //     <NavigationContainer>
-    //     <Stack.Navigator>
-    //       <Stack.Screen name="Заболевания" component={DiseasesScreen} />    
-    //       <Stack.Screen name="Заболевание" component={DiseaseScreen} />    
-    //     </Stack.Navigator>
-    //   </NavigationContainer>
-    // </Provider>
-    <NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Заболевания" component={DiseasesScreen} />    
           <Stack.Screen name="Заболевание" component={DiseaseScreen} />    
         </Stack.Navigator>
       </NavigationContainer>
+    </Provider>
+    // <NavigationContainer>
+    //     <Stack.Navigator>
+    //       <Stack.Screen name="Заболевания" component={DiseasesScreen} />    
+    //       <Stack.Screen name="Заболевание" component={DiseaseScreen} />    
+    //     </Stack.Navigator>
+    //   </NavigationContainer>
   );
 }
 
