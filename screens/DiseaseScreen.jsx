@@ -23,7 +23,7 @@ const DiseaseScreen = ({ route, navigation }) => {
         })
 
         axiosInstance
-            .get("diseases" + id)
+            .get("api/diseases/" + id)
             .then(({data}) => {
                 setData(data)
             })

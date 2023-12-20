@@ -1,7 +1,7 @@
 import {ActivityIndicator, Text, View} from "react-native";
 import React from "react";
 
-export const Load = () => {
+export const Loading = () => {
     return (
         <View style={{
             flex: 1,
