@@ -1,10 +1,8 @@
-import HomePage from "./pages/HomePage";
-import {StatusBar, View} from "react-native";
-import {Navigation} from "./pages/Navigation";
+import {Navigation} from "./screens/Navigation";
 
 export default function App() {
 
-  return (
-      <Navigation />
-  );
+    return (
+        <Navigation />
+    );
 }

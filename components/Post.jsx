@@ -1,24 +1,36 @@
 import styled from "styled-components/native";
-import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import {Button} from "react-native";
 
-const Post = ({ navigation, name, id }) => {
-    // const accountImage = `http://192.168.4.33:8000/api/icon/${type}/`;
+
+
+const Post = ({navigation, id, name, item}) => {
+
+    // const image = `http://${DOMEN}/api/audiences/${item.id}/image/`
+
+    const handlePress = () => {
+        navigation.navigate("FullPost", {id: id, name: name });
+    };
 
     return (
         <PostView>
-            <View style={styles.imageContainer}>
-                {/* <PostImage source={{ uri: accountImage }} /> */}
-            </View>
-            <View style={styles.detailsContainer}>
-                <Text style={styles.accountName}>{name}</Text>
-            </View>
+            <PostDetails>
+               
+                <PostRightDetails>
+                    <PostTitleContainer>
+                        <PostTitle>{name}</PostTitle>
+                    </PostTitleContainer>
+                    <PostButton>
+                        <Button title='Открыть' onPress={handlePress} color="pink" />
+                    </PostButton>
+                </PostRightDetails>
+            </PostDetails>
         </PostView>
-    );
-};
+    )
+}
+
 
 const PostView = styled.View`
-  flex-direction: row;
+  flex-direction: column;
   gap: 15px;
   padding: 15px;
   margin: 15px;
@@ -26,37 +38,39 @@ const PostView = styled.View`
   border-color: rgba(0, 0, 0, 0.1);
   border-style: solid;
   border-radius: 5px;
-`;
+`
 
 const PostImage = styled.Image`
   width: 60px;
   height: 60px;
   border-radius: 12px;
   margin-right: 12px;
-`;
+`
 
-const styles = {
-    imageContainer: {
-        marginRight: 12,
-    },
-    detailsContainer: {
-        flex: 1,
-        flexDirection: "column",
-    },
-    accountName: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#aaaaaa',
-    },
-    buttonContainer: {
-        flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
-    },
-    buttonText: {
-        fontSize: 16,
-        color: "#ffffff",
-    },
-};
+const PostTitleContainer = styled.Text`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+
+const PostTitle = styled.Text`
+  font-size: 18px;
+  font-weight: 700;
+`
+
+const PostDetails = styled.View`
+  flex-direction: row;
+`
+const PostRightDetails = styled.View`
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+`
+
+const PostButton = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+`
 
 export default Post;

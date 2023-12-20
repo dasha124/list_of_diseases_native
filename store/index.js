@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { diseaseReducer } from './diseaseSlice';
+import { regionReducer } from './regionSlice';
 
 
-export const store = configureStore({ reducer: {disease: diseaseReducer} });
+export const store = configureStore({ reducer: {region: regionReducer} });
