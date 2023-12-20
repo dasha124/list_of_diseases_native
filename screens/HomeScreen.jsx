@@ -18,14 +18,14 @@ const HomeScreen =({ navigation }) => {
         let endpoint = "/api/diseases/";
 
         if (query.trim() !== "") {
-            endpoint += `?disease_name=${encodeURIComponent(name)}`;
+            endpoint += `?disease_name=${encodeURIComponent(query)}`;
         }
 
         axiosInstance
             .get(endpoint)
             .then(({data}) => {
                 setItems(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch((err) => {
                 alert(err)
@@ -38,13 +38,20 @@ const HomeScreen =({ navigation }) => {
     useEffect(fetchPosts, [query])
 
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate("FullPost", {id: item.id, name: item.name })}>
-            <Post navigation={navigation} id={item.id} name={item.name} />
+        <TouchableOpacity onPress={() => navigation.navigate("FullPost", {id: item.id, name: item.disease_name })}>
+            <Post navigation={navigation} id={item.id} name={item.disease_name} />
         </TouchableOpacity>
     )
 
     return (
+        
         <View style={{ paddingBottom: 75 }}>
+            {/* <TextInput
+                style={styles.searchInput}
+                placeholder="Введите запрос..."
+                value={query}
+                onChangeText={(text) => setQuery(text)}
+            /> */}
 
             <SearchBar searchPhrase={query} setSearchPhrase={setQuery} clicked={clicked} setClicked={setClicked} />
 

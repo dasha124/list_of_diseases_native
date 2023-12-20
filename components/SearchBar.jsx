@@ -17,13 +17,13 @@ const SearchBar = ({searchPhrase, setSearchPhrase, clicked, setClicked}) => {
                 <Feather
                     name="search"
                     size={20}
-                    color="pink"
+                    color="#1dd3a2"
                     style={{ marginLeft: 1 }}
                 />
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Поиск аудиторий"
+                    placeholder="Поиск заболевания"
                     value={searchPhrase}
                     onChangeText={setSearchPhrase}
                     onFocus={() => {
@@ -32,7 +32,7 @@ const SearchBar = ({searchPhrase, setSearchPhrase, clicked, setClicked}) => {
                 />
 
                 {clicked && (
-                    <Entypo name="cross" size={20} color="pink" style={{ padding: 1 }} onPress={() => {
+                    <Entypo name="cross" size={20} color="#1dd3a2" style={{ padding: 1 }} onPress={() => {
                         setSearchPhrase("")
                     }}/>
                 )}
@@ -42,7 +42,7 @@ const SearchBar = ({searchPhrase, setSearchPhrase, clicked, setClicked}) => {
                 <View>
                     <Button
                         title="Отмена"
-                        color="pink"
+                        color="#1dd3a2"
                         onPress={() => {
                             Keyboard.dismiss();
                             setClicked(false);

@@ -9,8 +9,8 @@ export const Navigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} options={{title: "Аудитории"}} />
-                <Stack.Screen name="FullPost" component={FullPostScreen} options={{title: "Аудитория"}} />
+                <Stack.Screen name="Home" component={HomeScreen} options={{title: "Заболевания"}} />
+                <Stack.Screen name="FullPost" component={FullPostScreen} options={{title: "Заболевание"}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

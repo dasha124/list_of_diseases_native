@@ -3,12 +3,12 @@ import {Button} from "react-native";
 
 
 
-const Post = ({navigation, id, name, item}) => {
+const Post = ({navigation, id, name, simp}) => {
 
     // const image = `http://${DOMEN}/api/audiences/${item.id}/image/`
 
     const handlePress = () => {
-        navigation.navigate("FullPost", {id: id, name: name });
+        navigation.navigate("FullPost", {id: id, name: name, simp:simp });
     };
 
     return (
@@ -20,7 +20,7 @@ const Post = ({navigation, id, name, item}) => {
                         <PostTitle>{name}</PostTitle>
                     </PostTitleContainer>
                     <PostButton>
-                        <Button title='Открыть' onPress={handlePress} color="pink" />
+                        <Button title='Открыть' onPress={handlePress} color="#1dd3a2" />
                     </PostButton>
                 </PostRightDetails>
             </PostDetails>

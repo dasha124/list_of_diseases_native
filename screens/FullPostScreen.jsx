@@ -33,18 +33,18 @@ const FullPostScreen = ({ route, navigation }) => {
 
     const fetchGroup = () => {
         navigation.setOptions({
-            name
+            name,
         })
 
         axiosInstance
-            .get("/api/diseases/" + id)
+            .get("/api/diseases/" + id+'/')
             .then(({data}) => {
                 setData(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch((err) => {
                 console.log(err)
-                alert("Ошибка, не удалось получить аудиторию :(")
+                alert("Ошибка, не удалось получить сведения о заболевании")
             })
             .finally(() => {
                 setIsLoading(false)
@@ -71,11 +71,12 @@ const FullPostScreen = ({ route, navigation }) => {
             {/* <PostImage source={{uri: image}} /> */}
             <PostDetails>
                 <PostText>
-                    Название: {data.name}
+                    Название: {name}
+
                 </PostText>
-                {/* <PostText>
-                    Описание: {data.info}
-                </PostText> */}
+                <PostText>
+                    Описание: {data.simptoms}
+                </PostText>
             </PostDetails>
         </ScrollView>
     )
