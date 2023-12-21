@@ -40,7 +40,7 @@ const FullPostScreen = ({ route, navigation }) => {
             .get("/api/diseases/" + id+'/')
             .then(({data}) => {
                 setData(data)
-                // console.log(data)
+                console.log(data)
             })
             .catch((err) => {
                 console.log(err)
@@ -53,30 +53,26 @@ const FullPostScreen = ({ route, navigation }) => {
 
     useEffect(fetchGroup, [])
 
-    if (isLoading) {
-        return (
-            <View style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <Loading />
-            </View>
-        )
-    }
-
-
     return (
         <ScrollView style={{ padding: 20 }}>
-            {/* <PostImage source={{uri: image}} /> */}
+            {/* <PostImage source={{uri: data.image}} /> */}
             <PostDetails>
                 <PostText>
                     Название: {name}
+                </PostText>
+
+                <PostText>
+                Характерные симптомы:
+                </PostText>
+
+                <PostText>
+                {data && data.simptoms.split(",").map((symptom, index) => (
+                    <PostText key={index}>• {symptom.trim()}</PostText>
+                    ))}
 
                 </PostText>
-                <PostText>
-                    Описание: {data.simptoms}
-                </PostText>
+                
+                
             </PostDetails>
         </ScrollView>
     )

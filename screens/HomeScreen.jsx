@@ -38,20 +38,14 @@ const HomeScreen =({ navigation }) => {
     useEffect(fetchPosts, [query])
 
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate("FullPost", {id: item.id, name: item.disease_name })}>
-            <Post navigation={navigation} id={item.id} name={item.disease_name} />
+        <TouchableOpacity onPress={() => navigation.navigate("FullPost", {id: item.id, name: item.disease_nam, image:item.image })}>
+            <Post navigation={navigation} id={item.id} name={item.disease_name} image={item.image}/>
         </TouchableOpacity>
     )
 
     return (
         
         <View style={{ paddingBottom: 75 }}>
-            {/* <TextInput
-                style={styles.searchInput}
-                placeholder="Введите запрос..."
-                value={query}
-                onChangeText={(text) => setQuery(text)}
-            /> */}
 
             <SearchBar searchPhrase={query} setSearchPhrase={setQuery} clicked={clicked} setClicked={setClicked} />
 

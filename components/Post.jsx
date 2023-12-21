@@ -3,18 +3,19 @@ import {Button} from "react-native";
 
 
 
-const Post = ({navigation, id, name, simp}) => {
+const Post = ({navigation, id, name, simptoms, image}) => {
 
     // const image = `http://${DOMEN}/api/audiences/${item.id}/image/`
 
     const handlePress = () => {
-        navigation.navigate("FullPost", {id: id, name: name, simp:simp });
+        navigation.navigate("FullPost", {id: id, name: name, simptoms:simptoms });
     };
+    const base64Image = "data:image/jpeg;base64,"+image;
 
     return (
         <PostView>
             <PostDetails>
-               
+            <PostImage source={{uri: base64Image}} />
                 <PostRightDetails>
                     <PostTitleContainer>
                         <PostTitle>{name}</PostTitle>
