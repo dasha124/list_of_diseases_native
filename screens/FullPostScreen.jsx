@@ -55,7 +55,7 @@ const FullPostScreen = ({ route, navigation }) => {
 
     return (
         <ScrollView style={{ padding: 20 }}>
-            {/* <PostImage source={{uri: data.image}} /> */}
+            <PostImage source={{uri: data.image}} />
             <PostDetails>
                 <PostText>
                     Название: {name}
